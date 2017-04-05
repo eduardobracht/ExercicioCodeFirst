@@ -12,5 +12,7 @@ namespace PL.Models
         public int Age { get; set; }
         public string Name { get; set; }
 
+        public virtual ICollection<ActorMovie> ActorMovie { get; set; }
+
     }
 }
