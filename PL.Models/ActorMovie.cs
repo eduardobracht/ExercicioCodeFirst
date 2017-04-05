@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace PL.Models
 {
-    class ActorMovie
+    public class ActorMovie
     {
+        public int ID { get; set; }
         public int ActorID { get; set; }
         public int MovieID { get; set; }
         public string Role { get; set; }
