@@ -5,7 +5,6 @@ namespace EFCodeFirstApp.Migrations
     
     public partial class casting : DbMigration
     {
-        //teste
         public override void Up()
         {
             DropPrimaryKey("dbo.Movies");

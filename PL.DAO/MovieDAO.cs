@@ -31,12 +31,16 @@ namespace PL.DAO
 
         public Movie GetMovieByID(int movieId)
         {
-            throw new NotImplementedException();
+            var contexto = new MovieContext();
+            var filme = contexto.Movies.Find(movieId);
+            return filme;
         }
 
         public IEnumerable<Movie> GetMovies()
         {
-            throw new NotImplementedException();
+            var contexto = new MovieContext();
+            var listaFilmes = contexto.Movies.ToList();
+            return listaFilmes;
         }
 
         public void Update(Movie movie)

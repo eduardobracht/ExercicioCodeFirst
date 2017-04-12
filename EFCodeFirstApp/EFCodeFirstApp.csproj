@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>EFCodeFirstApp.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -69,6 +72,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PL.DAO\PL.DAO.csproj">
+      <Project>{E3A05922-0E2A-4957-995B-026A3D12E1BF}</Project>
+      <Name>PL.DAO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PL.Models\PL.Models.csproj">
       <Project>{afca5821-9752-44fb-8e9c-557a5c5b42e3}</Project>
       <Name>PL.Models</Name>
