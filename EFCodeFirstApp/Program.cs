@@ -10,220 +10,304 @@ namespace EFCodeFirstApp
 {
     class Program
     {
+        private static object listaFilmes;
+
         static void Main(string[] args)
         {
             #region CRUD
 
-            //// crud - adiciona na um novo filme à coleção
-            ////        remove o primeiro filme do banco
-            ////        atualiza os dados de um filme
+            // ADIÇÃO DE ATORES
+
             //using (var contexto = new MovieContext())
             //{
             //    var listaFilmes = contexto.Movies.ToList();
 
             //    // insert
-            //    contexto.Movies.Add(new Movie()
+            //    contexto.Actors.Add(new Actor()
             //    {
-            //        Title = "Logan2",
-            //        Director = "James Mangold",
-            //        Rating = 8.5,
-            //        ReleaseDate = new DateTime(2017, 03, 24),
-            //        GenreID = 1
+            //        Age = 43,
+            //        Name = "Christian Bale"
             //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
 
-            //    // edit
-            //    Movie batman = listaFilmes.Where(f => f.Title == "The Dark Knight").FirstOrDefault<Movie>();
-            //    if (batman != null)
-            //        batman.Title = "Batman - " + batman.Title;
+            //using (var contexto = new MovieContext())
+            //{
+            //    var listaFilmes = contexto.Movies.ToList();
 
-            //    // delete
-            //    contexto.Movies.Remove(listaFilmes.ElementAt<Movie>(0));
+            //    // insert
+            //    contexto.Actors.Add(new Actor()
+            //    {
+            //        Age = 59,
+            //        Name = "Gary Oldman"
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
 
-            //    // persistir
+            //using (var contexto = new MovieContext())
+            //{
+            //    var listaFilmes = contexto.Movies.ToList();
+
+            //    // insert
+            //    contexto.Actors.Add(new Actor()
+            //    {
+            //        Age = 36,
+            //        Name = "Elijah Wood"
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    var listaFilmes = contexto.Movies.ToList();
+
+            //    // insert
+            //    contexto.Actors.Add(new Actor()
+            //    {
+            //        Age = 40,
+            //        Name = "Orlando Bloom"
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    var listaFilmes = contexto.Movies.ToList();
+
+            //    // insert
+            //    contexto.Actors.Add(new Actor()
+            //    {
+            //        Age = 52,
+            //        Name = "Keanu Reeves"
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    var listaFilmes = contexto.Movies.ToList();
+
+            //    // insert
+            //    contexto.Actors.Add(new Actor()
+            //    {
+            //        Age = 55,
+            //        Name = "Laurence Fishburne"
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    var listaFilmes = contexto.Movies.ToList();
+
+            //    // insert
+            //    contexto.Actors.Add(new Actor()
+            //    {
+            //        Age = 58,
+            //        Name = "Tim Robbins"
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    var listaFilmes = contexto.Movies.ToList();
+
+            //    // insert
+            //    contexto.Actors.Add(new Actor()
+            //    {
+            //        Age = 79,
+            //        Name = "Morgan Freeman"
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            
+            // INSERTS ACTOR_MOVIES
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    // insert
+            //    contexto.ActorMovies.Add(new ActorMovie()
+            //    {
+            //        Role = "Bruce Wayne",
+            //        ActorID = 5,
+            //        MovieID = 6
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    // insert
+            //    contexto.ActorMovies.Add(new ActorMovie()
+            //    {
+            //        Role = "Jim Gordon",
+            //        ActorID = 6,
+            //        MovieID = 6
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    // insert
+            //    contexto.ActorMovies.Add(new ActorMovie()
+            //    {
+            //        Role = "Frodo Baggins",
+            //        ActorID = 7,
+            //        MovieID = 7
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    // insert
+            //    contexto.ActorMovies.Add(new ActorMovie()
+            //    {
+            //        Role = "Legolas",
+            //        ActorID = 8,
+            //        MovieID = 7
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    // insert
+            //    contexto.ActorMovies.Add(new ActorMovie()
+            //    {
+            //        Role = "Neo",
+            //        ActorID = 9,
+            //        MovieID = 9
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    // insert
+            //    contexto.ActorMovies.Add(new ActorMovie()
+            //    {
+            //        Role = "Morpheus",
+            //        ActorID = 10,
+            //        MovieID = 9
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    // insert
+            //    contexto.ActorMovies.Add(new ActorMovie()
+            //    {
+            //        Role = "Andy Dufresne",
+            //        ActorID = 11,
+            //        MovieID = 2
+            //    });
+            //    contexto.Database.Log = Console.Write;
+            //    contexto.SaveChanges();
+            //}
+
+            //using (var contexto = new MovieContext())
+            //{
+            //    // insert
+            //    contexto.ActorMovies.Add(new ActorMovie()
+            //    {
+            //        Role = "Ellis Boyd Redding",
+            //        ActorID = 12,
+            //        MovieID = 2
+            //    });
             //    contexto.Database.Log = Console.Write;
             //    contexto.SaveChanges();
             //}
 
 
-            //// lista todos os generos
-            //using (var contexto = new MovieContext())
-            //{
-            //    //contexto.Database.Log = Console.Write;
-
-            //    Console.WriteLine("Todos os generos");
-            //    foreach (Genre genero in contexto.Genres)
-            //    {
-            //        Console.WriteLine("{0} \t {1}", genero.GenreID, genero.Name);
-
-            //    }
-            //}
-
-            //Console.WriteLine("\n");
-            //// lista todos os filmes do genero "Action"
-            //using (var contexto = new MovieContext())
-            //{
-            //    contexto.Database.Log = Console.Write;
-            //    Genre genero = contexto.Genres.Find(1);
-            //    if (genero != null)
-            //    {
-            //        Console.WriteLine("\nFilmes do genero: " + genero.Name);
-            //        foreach (Movie filme in genero.Movies)
-            //        {
-            //            Console.WriteLine("\t{0}", filme.Title);
-
-            //        }
-            //    }
-            //}
-
-            //// gera uma exceção pois o contexto não está disponível
-            //Console.WriteLine("\nDesconectado...\n");
-            //MovieContext cntx = new MovieContext();
-            //cntx.Database.Log = Console.Write;
-            //Genre action = cntx.Genres.Find(1);
-            //cntx.Dispose();
-            //if (action != null)
-            //{
-            //    Console.WriteLine("\nFilmes do genero: " + action.Name);
-
-            //    foreach (Movie filme in action.Movies)
-            //    {
-            //        Console.WriteLine("\t{0}", filme.Title);
-            //    }
-            //}
-
-
-            //// Desconectato
-            //MovieContext cntx = new MovieContext();
-            //cntx.Database.Log = Console.Write;
-            //List<Genre> generos = cntx.Genres.ToList<Genre>();
-            //cntx.Dispose();
-            //foreach (Genre genero in generos)
-            //{
-            //    Console.WriteLine("{0} \t {1}", genero.GenreID, genero.Name);
-            //}
-
-            //cntx = new MovieContext();
-            ////cntx.Database.Log = Console.Write;
-            ////var action= cntx.Genres.Find(1);
-            //var action2 = cntx.Genres.Include("Movies").Where(g => g.GenreID == 1).FirstOrDefault();
-            //cntx.Dispose();
-            //if (action2 != null)
-            //{
-            //    Console.WriteLine("{0} \t {1}", action2.Name, action2.Description);
-            //    foreach (Movie filme in action2.Movies)
-            //    {
-            //        Console.WriteLine("\t{0}", filme.Title);
-            //    }
-            //}
 
             #endregion
 
             #region Consultas
 
-            // MovieContext context = new MovieContext();
-            // // filmes do diretor “Quentin Tarantino”
-            // var query1 = from f in context.Movies
-            //              where f.Director == "Quentin Tarantino"
-            //              select f;
-
-            // var query2 = from f in context.Movies
-            //              where f.Director == "Quentin Tarantino"
-            //              select f.Title;
-
-            // var query3 = context.Movies
-            //                       .Where(f => f.Director == "Quentin Tarantino")
-            //                       .Select(f => f.Title);
-
-            // Console.WriteLine("Filmes do diretor Quentin Tarantino");
-            // foreach (String titulo in query2)
-            // {
-            //     Console.WriteLine(titulo);
-            // }
+            MovieContext context = new MovieContext();
 
 
-            // //todos os filmes do genero "Action"
-            // Console.WriteLine("\nFilmes de ação");
-            // context.Database.Log = Console.Write;
-            // var query4 = (from genero in context.Genres
-            //                                    .Include("Movies")
-            //               where genero.Name == "Action"
-            //               select genero).First();
+            //MovieDAO daoContexto = new MovieDAO();
+            //Movie movie = daoContexto.GetMovieByID(2);
 
-            // foreach (var filme in query4.Movies)
-            // {
-            //     Console.WriteLine("\t" + filme.Title);
-            // }
+            //Console.WriteLine(movie.Title);
 
-            // //projeção sobre o título e dada de lançamento dos
-            // //filmes do diretor “Quentin Tarantino” 
-            // var query5 = from f in context.Movies
-            //              where f.Director == "Quentin Tarantino"
-            //              select new { f.Title, f.ReleaseDate };
 
-            // foreach (var filme in query5)
-            // {
-            //     Console.WriteLine("{0}\t {1}", filme.ReleaseDate.ToShortDateString(), filme.Title);
-            // }
+            //a) Listar o elenco de um determinado filme
 
-            // // Gêneros ordenados pelo nome
-            // var query6 = from g in context.Genres
-            //              orderby g.Name descending
-            //              select g;
+            //Console.WriteLine("14a: Elenco do filme Batman: ");
 
-            // foreach (var genero in query6)
-            // {
-            //     Console.WriteLine("{0}\t {1}", genero.Name, genero.Description);
-            // }
+            var query5 = from f in context.Movies.Include("ActorMovies").Include("Actors")
+                         where f.Title == "The Dark Knight"
+                         select new { f.Title, f.ActorMovie };
 
-            // //Filmes agrupados pelo ano de lançamento
-            // var query7 = from f in context.Movies
-            //              group f by f.ReleaseDate.Year;
+            foreach (var filme in query5)
+            {
+                Console.WriteLine("Atores do filme {0}\t", filme.Title);
 
-            // foreach (var ano in query7.OrderByDescending(g => g.Key))
-            // {
-            //     Console.WriteLine("Ano: {0}", ano.Key);
-            //     foreach (var filme in ano)
-            //     {
-            //         Console.WriteLine("\t{0:dd/MM}\t {1}",
-            //                                  filme.ReleaseDate,
-            //                                 filme.Title);
-            //     }
-            // }
+                //foreach (var )
 
-            // //Projeção do faturamento total, quantidade de filmes
-            // //e avaliação média agrupadas por gênero
-            //var query8 = from f in context.Movies
-            //             group f by f.Genre.Name into grpGen
-            //             select new
-            //             {
-            //                 Categoria = grpGen.Key,
-            //                 Filmes = grpGen,
-            //                 Faturamento = grpGen.Sum(e => e.Gross),
-            //                 Avaliacao = grpGen.Average(e => e.Rating),
-            //                 Quantidade = grpGen.Count()
-            //             };
+                //Console.WriteLine("{0}\t {1}", actor.ActorMovie, actor.Title);
+            }
 
-            // foreach (var genero in query8)
-            // {
-            //     Console.WriteLine("Genero: {0}", genero.Categoria);
-            //     Console.WriteLine("\tFaturamento total: {0}\n\t Avaliação média: {1}\n\tNumero de filmes: {2}",
-            //                         genero.Faturamento, genero.Avaliacao, genero.Quantidade);
-            //     Console.WriteLine("Filmes: ");
-            //     foreach (var m in genero.Filmes)
-            //     {
-            //         Console.WriteLine("\t{0}", m.Title);
-            //     }
-            // }
+
+            ////projeção sobre o título e dada de lançamento dos
+            ////filmes do diretor “Quentin Tarantino” 
+            //var query5 = from f in context.Actors
+            //             where f.Name == "Christian Bale"
+            //             select new { f.Name, f.Age};
+
+            //foreach (var actor in query5)
+            //{
+            //    Console.WriteLine("{0}\t {1}", actor.Name, actor.Age);
+            //}
+
+
+
+
+
+            //b) Listar todos os atores que já desempenharam um determinado personagem
+            //(por exemplo, quem foram todos os “agentes 007”?)
+
+
+
+            //c) Informar qual o ator desempenhou mais vezes um determinado personagem
+            //(qual o ator que realizou mais filmes como o “agente 007”)
+
+
+
+            //d) Outras consultas que o grupo julgar interessante.
+
+
+
+            //15.Crie uma nova migração para realizar a alteração no banco de dados e insira
+            //alguns dados que permitam testar o modelo proposto e as consultas acima.
+
+
 
 
             #endregion
 
-            MovieDAO daoContexto = new MovieDAO();
-            Movie movie = daoContexto.GetMovieByID(9);
-
-            Console.WriteLine(movie.Title);
-
             Console.ReadKey();
         }
-    }
+}
 }
