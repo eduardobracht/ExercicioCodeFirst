@@ -245,29 +245,66 @@ namespace EFCodeFirstApp
 
             MovieContext context = new MovieContext();
 
-
             //MovieDAO daoContexto = new MovieDAO();
             //Movie movie = daoContexto.GetMovieByID(2);
-
             //Console.WriteLine(movie.Title);
-
 
             //a) Listar o elenco de um determinado filme
 
             //Console.WriteLine("14a: Elenco do filme Batman: ");
 
-            var query5 = from f in context.Movies.Include("ActorMovies").Include("Actors")
-                         where f.Title == "The Dark Knight"
-                         select new { f.Title, f.ActorMovie };
+            //var query5 = from f in context.Movies
+            //                               .Include("ActorMovies")
+            //              where f.Title == "The Dark Knight"
+            //              select f;
+
+            //foreach (var filme in query5)
+            //{
+            //    Console.WriteLine("Atores do filme {0}\t", filme.ActorMovie);
+
+            //}
+
+
+            var query5 = from f in context.ActorMovies
+                         select f;
 
             foreach (var filme in query5)
             {
-                Console.WriteLine("Atores do filme {0}\t", filme.Title);
+                Console.WriteLine("{0} {1} {2} \t", filme.ActorMovieID, filme.Role, filme.ActorID);
 
-                //foreach (var )
-
-                //Console.WriteLine("{0}\t {1}", actor.ActorMovie, actor.Title);
             }
+
+
+
+            //var query4 = (from genero in context.Genres
+            //                                   .Include("Movies")
+            //              where genero.Name == "Action"
+            //              select genero).First();
+
+            //foreach (var filme in query4.Movies)
+            //{
+            //    Console.WriteLine("\t" + filme.Title);
+            //}
+
+
+
+
+
+            ////todos os filmes do genero "Action"
+            //String filme = "The Dark Knight";
+            //Console.WriteLine("\nAtores de " + filme);
+            ////context.Database.Log = Console.Write;
+            //var query4 = (from filmes in context.Movies
+            //                                   .Include("ActorMovies")
+            //              where filmes.Title == filme
+            //              select filmes).First();
+
+            //foreach (var movie in query4.ActorMovie)
+            //{
+            //    Console.WriteLine("\t" + movie.Role);
+
+            //}
+
 
 
             ////projeção sobre o título e dada de lançamento dos
