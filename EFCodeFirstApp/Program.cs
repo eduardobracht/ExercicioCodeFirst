@@ -130,7 +130,7 @@ namespace EFCodeFirstApp
             //    contexto.SaveChanges();
             //}
 
-            
+
             // INSERTS ACTOR_MOVIES
 
             //using (var contexto = new MovieContext())
@@ -251,28 +251,40 @@ namespace EFCodeFirstApp
 
             //a) Listar o elenco de um determinado filme
 
-            //Console.WriteLine("14a: Elenco do filme Batman: ");
+            // Console.WriteLine("14a: Elenco do filme Batman: ");
+            // context.Database.Log = Console.Write;
+            // var query5 = (from f in context.Movies
+            ////                                .Include("ActorMovie").Include("Actor")
+            //              where f.Title == "The Dark Knight"
+            //              select f).First();
+
+            // foreach (var filme in query5.ActorMovie)
+            // {
+            //     Console.WriteLine("Atores do filme {0}\t", filme.Actor.Name);
+
+            // }
+
+            Console.WriteLine("14a: Elenco do filme Batman: ");
+            context.Database.Log = Console.Write;
+            var query5 = (from f in context.ActorMovies
+                                 .Include("Movie").Include("Actor")
+                          where f.Movie.Title == "The Dark Knight"
+                          select f);
+
+            foreach (var am in query5)
+            {
+                Console.WriteLine("Atores do filme {0}\t{1}", am.Role, am.Actor.Name);
+
+            }
 
             //var query5 = from f in context.Movies
-            //                               .Include("ActorMovies")
-            //              where f.Title == "The Dark Knight"
-            //              select f;
+            //             where f.Title == "The Dark Knight"
+            //             select f;
 
             //foreach (var filme in query5)
             //{
-            //    Console.WriteLine("Atores do filme {0}\t", filme.ActorMovie);
 
             //}
-
-
-            var query5 = from f in context.ActorMovies
-                         select f;
-
-            foreach (var filme in query5)
-            {
-                Console.WriteLine("{0} {1} {2} \t", filme.ActorMovieID, filme.Role, filme.ActorID);
-
-            }
 
 
 
@@ -346,5 +358,5 @@ namespace EFCodeFirstApp
 
             Console.ReadKey();
         }
-}
+    }
 }
