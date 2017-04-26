@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL.Models", "PL.Models\PL.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PL.DAO", "PL.DAO\PL.DAO.csproj", "{E3A05922-0E2A-4957-995B-026A3D12E1BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebEFCodeFirst", "WebEFCodeFirst\WebEFCodeFirst.csproj", "{5E519C08-BB6F-4A1A-B3FF-70C18F14E8CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebEFCodeFirst.Tests", "WebEFCodeFirst.Tests\WebEFCodeFirst.Tests.csproj", "{FF7D29A0-0487-421C-A9E3-96D59838846C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{E3A05922-0E2A-4957-995B-026A3D12E1BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3A05922-0E2A-4957-995B-026A3D12E1BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3A05922-0E2A-4957-995B-026A3D12E1BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E519C08-BB6F-4A1A-B3FF-70C18F14E8CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E519C08-BB6F-4A1A-B3FF-70C18F14E8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E519C08-BB6F-4A1A-B3FF-70C18F14E8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E519C08-BB6F-4A1A-B3FF-70C18F14E8CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF7D29A0-0487-421C-A9E3-96D59838846C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF7D29A0-0487-421C-A9E3-96D59838846C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF7D29A0-0487-421C-A9E3-96D59838846C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF7D29A0-0487-421C-A9E3-96D59838846C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

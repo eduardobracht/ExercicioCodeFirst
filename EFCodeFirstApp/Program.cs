@@ -265,7 +265,7 @@ namespace EFCodeFirstApp
             // }
 
             Console.WriteLine("14a: Elenco do filme Batman: ");
-            context.Database.Log = Console.Write;
+            //context.Database.Log = Console.Write;
             var query5 = (from f in context.ActorMovies
                                  .Include("Movie").Include("Actor")
                           where f.Movie.Title == "The Dark Knight"
@@ -274,8 +274,9 @@ namespace EFCodeFirstApp
             foreach (var am in query5)
             {
                 Console.WriteLine("Atores do filme {0}\t{1}", am.Role, am.Actor.Name);
-
             }
+
+
 
             //var query5 = from f in context.Movies
             //             where f.Title == "The Dark Knight"
